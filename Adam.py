@@ -20,7 +20,7 @@ while (1):					#till it gets converged
 	v_t = beta_2*v_t + (1-beta_2)*(g_t*g_t)	#updates the moving averages of the squared gradient
 	m_cap = m_t/(1-(beta_1**t))		#calculates the bias-corrected estimates
 	v_cap = v_t/(1-(beta_2**t))		#calculates the bias-corrected estimates
-	theta_0_prev = theta_0_prev								
+	theta_0_prev = theta_0								
 	theta_0 = theta_0 - (alpha*m_cap)/(math.sqrt(v_cap)+epsilon)	#updates the parameters
 	if(theta_0 == theta_0_prev):		#checks if it is converged or not
 		break
